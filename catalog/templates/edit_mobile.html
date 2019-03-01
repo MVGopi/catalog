@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <center>
+  <div class="well">
+    <div class="row">
+      <div class="col-sm-2">
+    <b><a href="{{ url_for('home') }}">Home</a><b>
+    </div>
+  <div class="col-sm-9">
+    <h1>Edit {{ mobile_details.name }}</h1>
+  </div>
+  </div>
+  </div>
+  </center>
+<form action="{{ url_for('edit_mobile',company_id=company_id,mobile_id=mobile_id) }}" method='post'>
+  <p>Name:</p>
+  <input type ='text' size='30' name='name' value="{{ mobile_details.name }}" required>
+  <p>Price:</p>
+  <input type ='text' size='30' name='price' value="{{ mobile_details.price }}" required >
+  <p>Ram:</p>
+  <input type ='text' size='30' name='ram' value="{{ mobile_details.ram }}" required>
+  <p>Rom:</p>
+  <input type ='text' size='30' name='rom' value="{{ mobile_details.rom }}" required>
+  <p>Front_Cam:</p>
+  <input type ='text' size='30' name='front_cam' value="{{ mobile_details.front_cam }}" required>
+  <p>Back_Cam:</p>
+  <input type ='text' size='30' name='back_cam' value="{{ mobile_details.back_cam }}" required>
+  <p>Image:</p>
+  <input type ='text' size='150' name='image' value="{{ mobile_details.image }}" required><br><br>
+  <input type='submit' value='update'><a href = '{{url_for('view_mobiles',company_id=company_id)}}'> Cancel </a>
+</form>
+</body>
+</html

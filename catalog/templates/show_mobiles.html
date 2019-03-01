@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <center>
+  <div class="well">
+    <div class="row">
+    <div class="col-sm-9">
+  <h1 style="font-style:italic">{{ company.name }} Mobiles</h1>
+  </div>
+  </div>
+  </div>
+  </center>
+<center>
+<div class="row"  >
+{% for mobile in mobiles_list %}
+    <div class="col-sm-4">
+    <img src="{{ mobile.image }}" width="180" height="200" /><br>
+    <tr>
+    <td>Name:{{ mobile.name }}</td><br>
+    <td>Cost:{{ mobile.price }}</td><br>
+    <td>RAM:{{ mobile.ram }}</td><br>
+    <td>ROM:{{ mobile.rom }}</td><br>
+    <td>Back_Cam:{{ mobile.back_cam }}</td><br>
+    <td>Back_Cam:{{ mobile.front_cam }}</td>
+  </tr><br>
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>

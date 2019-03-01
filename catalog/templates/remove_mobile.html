@@ -1,0 +1,13 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+   <body>
+      <h1> Are you sure you want to delete {{ mobile.name }}? </h1>
+      <br>
+      <form action="{{ url_for('remove_mobile',company_id=company_id,mobile_id=mobile_id) }}" method = 'post' >
+         <input type='submit', value = 'Delete'>
+      </form>
+      <a href = '{{url_for('view_mobiles',company_id=company_id)}}'> Cancel </a>
+   </body>
+   </html
